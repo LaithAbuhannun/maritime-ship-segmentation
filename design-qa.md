@@ -39,3 +39,7 @@ User request: choose suitable Dribbble inspiration and apply it to the existing 
 ## Follow-up polish
 
 None required for this scoped redesign. Source footage is a dashboard; this site intentionally remains a portfolio with readable narrative and a report download.
+
+## Motivation update — source-backed context
+
+Added a motivation anchor, hero rationale, three statistic cards and a report call to action. Sources are AMSA, EMSA, OFAC, ABF and the US Coast Guard. The 2.34-tonne figure is explicitly the initial 2024 announcement; the +17% figure is explicitly a US incident-response reporting measure. No forecast, AMSA breach, or link between AIS manipulation and the Queensland case is asserted. The report PDF and experiment metrics were not changed. Browser check: 1512 × 1000 desktop, 390 × 844 mobile; no horizontal document overflow. Seven external source links present in the motivation section. Local validator and JavaScript syntax checks passed.
