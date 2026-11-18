@@ -42,3 +42,85 @@ document.querySelector('.report-preview').addEventListener('toggle',event=>{
   if(event.target.open){const frame=event.target.querySelector('iframe');if(!frame.hasAttribute('src'))frame.src=frame.dataset.src;}
 });
 fetch('assets/metrics.json').then(response=>{if(!response.ok)throw new Error('Metrics unavailable');return response.json();}).then(data=>{metrics=data;renderTable();}).catch(()=>{document.getElementById('dataset-note').textContent='The interactive table could not load. The chart and linked CSV remain available.';});
+
+// Motion enhances the real experiment images; it never changes the evidence.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const revealTargets = document.querySelectorAll('.hero-copy > *, .scope-grid > div, .section-heading, .overview > div:last-child, .summary-chart, .results-controls, .table-scroll, .finding-grid article, .curves-heading, .curve-list, .report-grid > div, .code-grid > a, .limitations');
+let revealObserver;
+if (!motionPreference.matches && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('motion-ready');
+  revealObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  }, {threshold: 0.08, rootMargin: '0px 0px -24px 0px'});
+  revealTargets.forEach((element) => {
+    element.classList.add('reveal');
+    // Short stagger only within small card groups, never across the whole page.
+    const parent = element.parentElement;
+    if (parent.matches('.scope-grid, .finding-grid, .code-grid, .hero-copy')) {
+      element.style.setProperty('--reveal-delay', `${Math.min([...parent.children].indexOf(element), 4) * 65}ms`);
+    }
+    revealObserver.observe(element);
+  });
+}
+
+for (const card of document.querySelectorAll('.hero-visual, .evidence-frame, .cover-link')) {
+  card.classList.add('tilt-card');
+  let animationFrame = 0;
+  function resetTilt() {
+    cancelAnimationFrame(animationFrame);
+    card.classList.remove('is-tilting');
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  }
+  card.addEventListener('pointermove', event => {
+    if (motionPreference.matches || !finePointer.matches || event.pointerType === 'touch') return;
+    cancelAnimationFrame(animationFrame);
+    animationFrame = requestAnimationFrame(() => {
+      const bounds = card.getBoundingClientRect();
+      const x = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+      const y = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+      card.style.setProperty('--tilt-x', `${(0.5 - y) * 7}deg`);
+      card.style.setProperty('--tilt-y', `${(x - 0.5) * 7}deg`);
+      card.style.setProperty('--pointer-x', `${x * 100}%`);
+      card.style.setProperty('--pointer-y', `${y * 100}%`);
+      card.classList.add('is-tilting');
+    });
+  });
+  card.addEventListener('pointerleave', resetTilt);
+  card.addEventListener('pointercancel', resetTilt);
+  motionPreference.addEventListener('change', resetTilt);
+}
+
+const progress = document.createElement('div');
+progress.className = 'reading-progress';
+progress.setAttribute('aria-hidden', 'true');
+document.body.prepend(progress);
+let scrollFrame = 0;
+function updateProgress() {
+  const distance = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.transform = `scaleX(${distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0})`;
+  scrollFrame = 0;
+}
+window.addEventListener('scroll', () => {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateProgress);
+}, {passive: true});
+window.addEventListener('resize', updateProgress);
+document.querySelectorAll('details').forEach(detail => detail.addEventListener('toggle', updateProgress));
+updateProgress();
+motionPreference.addEventListener('change', () => {
+  if (motionPreference.matches) {
+    document.documentElement.classList.remove('motion-ready');
+    if (revealObserver) revealObserver.disconnect();
+  }
+});
+const comparisonImage = document.getElementById('comparison-image');
+comparisonImage.addEventListener('load', () => {
+  comparisonImage.classList.remove('is-changing');
+  if (!motionPreference.matches) requestAnimationFrame(() => comparisonImage.classList.add('is-changing'));
+});
