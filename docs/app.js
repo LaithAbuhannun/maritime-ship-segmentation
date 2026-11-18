@@ -46,7 +46,7 @@ fetch('assets/metrics.json').then(response=>{if(!response.ok)throw new Error('Me
 // Motion enhances the real experiment images; it never changes the evidence.
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-const revealTargets = document.querySelectorAll('.hero-copy > *, .scope-grid > div, .section-heading, .overview > div:last-child, .summary-chart, .results-controls, .table-scroll, .finding-grid article, .curves-heading, .curve-list, .report-grid > div, .code-grid > a, .limitations');
+const revealTargets = document.querySelectorAll('.hero-copy > *, .scope-grid > div, .section-heading, .overview > div:last-child, .summary-chart, .results-controls, .table-scroll, .finding-grid article, .curves-heading, .curve-list, .report-grid > div, .code-grid > a, .motivation-stats article, .research-purpose, .limitations');
 let revealObserver;
 if (!motionPreference.matches && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('motion-ready');
