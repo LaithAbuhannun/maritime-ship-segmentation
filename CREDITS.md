@@ -24,3 +24,7 @@ This work implements, adapts and evaluates existing models. It does not introduc
 
 ## Tool assistance
 ChatGPT/Codex assisted with code development and debugging, drafting/reviewing text, figure and chart layout, LaTeX formatting, and preparation of this portfolio. Scientific charts are produced from retained numeric histories or native ClearML exports; qualitative images are retained model outputs, not generative illustrations. The portfolio chart is generated directly from the selected metric JSON. The author is responsible for reviewing the work and its conclusions.
+
+## Portfolio design reference
+
+The portfolio's dark surfaces, restrained cyan palette and layered evidence panels take visual inspiration from [Geospatial Intelligence Dashboard & Mission Control UI by George Railean](https://dribbble.com/shots/27894830-Geospatial-Intelligence-Dashboard-Mission-Control-UI). The implementation is an original adaptation for this research portfolio. Its satellite artwork and interface assets are not reused; the research images, curves and measurements are this project's retained experimental evidence.
