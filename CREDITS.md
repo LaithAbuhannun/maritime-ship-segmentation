@@ -28,3 +28,5 @@ ChatGPT/Codex assisted with code development and debugging, drafting/reviewing t
 ## Portfolio design reference
 
 The portfolio's dark surfaces, restrained cyan palette and layered evidence panels take visual inspiration from [Geospatial Intelligence Dashboard & Mission Control UI by George Railean](https://dribbble.com/shots/27894830-Geospatial-Intelligence-Dashboard-Mission-Control-UI). The implementation is an original adaptation for this research portfolio. Its satellite artwork and interface assets are not reused; the research images, curves and measurements are this project's retained experimental evidence.
+
+The later image-led refresh also draws on Shakuro’s [Per Appelgren photography portfolio](https://dribbble.com/shots/27824051-Website-Design-for-Fashion-and-Beauty-Photographer-Per-Appelgren): restrained navigation, generous whitespace and image-first composition. No reference artwork is reused. Dataset image context is recorded in `docs/assets/dataset-image-sources.json`; source dataset illustrations are not presented as final-test predictions.

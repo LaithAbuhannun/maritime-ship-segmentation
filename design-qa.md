@@ -1,45 +1,44 @@
-# Portfolio design review — 18 November 2026
+# Research portfolio visual review — 18 November 2026
 
 final result: passed
 
-## Target and evidence
+## Current target
 
-User request: choose suitable Dribbble inspiration and apply it to the existing research portfolio. This is an adaptation of the visual direction, not a pixel-for-pixel dashboard clone.
+The user requested a cleaner, more beautiful site with better real dataset pictures and animations. The selected visual direction adapts Shakuro’s image-led Per Appelgren portfolio: restrained navigation, editorial typography, large photographs, whitespace and layered imagery. This is a research-specific adaptation, not an exact clone. Earlier dark dashboard styling is superseded.
 
-- Source: [George Railean, Geospatial Intelligence Dashboard & Mission Control UI](https://dribbble.com/shots/27894830-Geospatial-Intelligence-Dashboard-Mission-Control-UI).
-- Source capture: `/Users/laithhannun/Documents/Codex/dribbble-geospatial-reference.png` (1512 × 771 pixels).
-- Desktop implementation: `/Users/laithhannun/Documents/Codex/maritime-portfolio-desktop-v3.png` (1512 × 900 pixels; viewport 1512 × 900 CSS pixels).
-- Mobile implementation: `/Users/laithhannun/Documents/Codex/maritime-portfolio-mobile-v3.png` (390 × 844 pixels; viewport 390 × 844 CSS pixels).
-- Combined comparison opened and reviewed: `/Users/laithhannun/Documents/Codex/maritime-portfolio-design-comparison.jpg`. Captures downsampled proportionally to adjacent 744-pixel-wide columns. Different source and implementation content and heights are intentional; no exact geometry matching claimed.
+## Evidence opened and compared
 
-## Findings and corrections
+- Source: https://dribbble.com/shots/27824051-Website-Design-for-Fashion-and-Beauty-Photographer-Per-Appelgren
+- Source capture: `/Users/laithhannun/Documents/Codex/dribbble-photography-reference.png` (1512 × 771 px).
+- Revised desktop: `/Users/laithhannun/Documents/Codex/maritime-editorial-desktop.png` (1512 × 900 px; same CSS viewport width).
+- Mobile: `/Users/laithhannun/Documents/Codex/maritime-editorial-mobile.png` (390 × 844 px).
+- Combined comparison opened: `/Users/laithhannun/Documents/Codex/maritime-editorial-comparison.jpg`; proportional downsampling to adjacent 744-pixel columns. Different source framing, page content and heights are intentional; no exact geometric match claimed.
 
-- P2 in first local capture: duplicate experiment label and nested hero wrapper. Removed duplicated wrapper/label and scroll cue. Latest desktop capture shows a single label, correct two-column structure and no clipping.
-- No outstanding P0/P1/P2 findings in the revised desktop/mobile views.
+## Iteration findings
 
-## Required surfaces
+1. P2: overlapping floating panels obscured the hero caption. Moved source context to a separate footnote below the panels. Revised desktop capture shows the footnote clearly.
+2. P2: the initial mobile title wrapped over three lines and pushed the imagery too far down. Reduced mobile title size and removed the redundant mobile byline; author information remains in the header, report and footer. Revised mobile capture shows the two-line title and main vessel photograph on the first screen.
+3 Ambiguous initial HRSID illustration was replaced with the verified retained coastal image 1, a distinct filename to avoid stale browser cache, corrected alt text and provenance metadata. Browser confirms the harbour asset.
 
-- Typography: replaces editorial serif with a restrained system sans-serif, generous display heading and compact technical labels. Main title wraps intentionally over three desktop lines. Body remains legible and has a clear hierarchy.
-- Spacing/layout: consistent section spacing, bounded cards, matched radii, substantial image area. Mobile stacks the hero and evidence grid; document width measured 390 at a 390-pixel viewport.
-- Colours: charcoal base, blue-grey panels and pale cyan controls adapt the source direction. Charts retain their original evidence colours within light image panels; no data or curve colours are modified.
-- Images: actual retained SAR/visible comparisons and native ClearML exports, preserving aspect ratios. No satellite illustration, fake charts or generated research images added.
-- Content: existing methodological limitations and prompted SAMSAR distinction retained. Highlighted RF-DETR visible-light AP50:95 is 70.76%, matching the selected metrics. Report PDF unmodified.
+## Required visual surfaces
 
-## Browser checks
+- Typography: system sans-serif for the research content; a restrained italic serif for the hero phrase; consistent readable body text, captions and technical labels. Clear heading hierarchy.
+- Spacing/layout: image-led hero, generous whitespace, aligned three-column dataset gallery and two-column annotation comparison. Small screens stack sections. No document overflow at 1512 or 390 CSS pixels.
+- Colours: warm off-white, forest green and sage; chart colours unchanged. Footer and source-code card hover colours adjusted for legibility. Dark report section deliberately retained as a distinct reading destination.
+- Assets: original dataset photographs and retained SAR inputs/annotations. No AI-generated dataset pictures or reference artwork reused. New asset provenance in `docs/assets/dataset-image-sources.json`. Source valid-directory RGB examples labelled illustrative; ground-truth viewer explicitly not a prediction.
+- Content: sourced maritime motivation, experiment results and report preserved. No new performance claims. Hero headline is presentation copy, not an operational deployment claim.
 
-- Result dataset switch: visible-light table displays RF-DETR 70.76 AP50:95 / 90.95 AP50 / 93.96 precision / 86.15 recall / 89.88 F1 / 7.64 FPS.
-- SAMSAR checkbox displays the prompted row separately.
-- Qualitative dataset controls and visible-light training-history disclosure exercised.
-- Navigation anchors and report links retained; PDF preview remains lazy-loaded.
-- Desktop and mobile overflow checks passed.
-- Browser error/warning log returned no entries for the local preview.
-- Reduced-motion media rule suppresses animations and transforms; motion preference guard in JavaScript retained. OS preference switching not manually exercised.
-- `node --check docs/app.js` and `python3 scripts/validate_portfolio.py` passed. No GPU training repeated.
+## Functional checks
+
+- Native image dialog opens from a gallery card, shows its title/context, closes by button and Escape.
+- Annotation range updates the clip and accessible percentage; ArrowRight produced 56%, End produced 100%.
+- Dataset switch keyboard activation shows visible RF-DETR AP50:95 70.76 / AP50 90.95 / P 93.96 / R 86.15 / F1 89.88 / FPS 7.64.
+- Prompted SAMSAR remains a separate optional row.
+- Scroll reveals, card hover effects, lazy images and image transitions retained; reduced-motion CSS/JS guards present. OS preference switching was not manually exercised.
+- No browser warning/error entries in local check.
+- `python3 scripts/validate_portfolio.py`, `node --check docs/app.js`, and `git diff --check` passed.
+- No GPU training or experimental metric regeneration performed.
 
 ## Follow-up polish
 
-None required for this scoped redesign. Source footage is a dashboard; this site intentionally remains a portfolio with readable narrative and a report download.
-
-## Motivation update — source-backed context
-
-Added a motivation anchor, hero rationale, three statistic cards and a report call to action. Sources are AMSA, EMSA, OFAC, ABF and the US Coast Guard. The 2.34-tonne figure is explicitly the initial 2024 announcement; the +17% figure is explicitly a US incident-response reporting measure. No forecast, AMSA breach, or link between AIS manipulation and the Queensland case is asserted. The report PDF and experiment metrics were not changed. Browser check: 1512 × 1000 desktop, 390 × 844 mobile; no horizontal document overflow. Seven external source links present in the motivation section. Local validator and JavaScript syntax checks passed.
+No outstanding P0/P1/P2 findings for this scope. Small dataset source images retain their native detail; they are not enhanced or synthesised.

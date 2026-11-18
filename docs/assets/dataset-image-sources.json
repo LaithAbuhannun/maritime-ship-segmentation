@@ -1,0 +1,22 @@
+[
+  {
+    "file": "dataset-ssdd-input.png",
+    "meaning": "SSDD retained test image 1083882818, input. Ground truth is an annotation, not a prediction."
+  },
+  {
+    "file": "dataset-ssdd-annotation.png",
+    "meaning": "SSDD retained test image 1083882818, ground_truth. Ground truth is an annotation, not a prediction."
+  },
+  {
+    "file": "dataset-visible-patrol.jpg",
+    "meaning": "Original visible dataset example from source valid directory. Final prepared split membership not verified. Illustrative only, not a final-test prediction."
+  },
+  {
+    "file": "dataset-visible-cruise.jpg",
+    "meaning": "Original visible dataset example from source valid directory. Final prepared split membership not verified. Illustrative only, not a final-test prediction."
+  },
+  {
+    "file": "dataset-hrsid-harbour.png",
+    "meaning": "HRSID retained test image 1, original input. Original retained presentation dataset example; no prediction overlay."
+  }
+]

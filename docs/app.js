@@ -46,7 +46,7 @@ fetch('assets/metrics.json').then(response=>{if(!response.ok)throw new Error('Me
 // Motion enhances the real experiment images; it never changes the evidence.
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-const revealTargets = document.querySelectorAll('.hero-copy > *, .scope-grid > div, .section-heading, .overview > div:last-child, .summary-chart, .results-controls, .table-scroll, .finding-grid article, .curves-heading, .curve-list, .report-grid > div, .code-grid > a, .motivation-stats article, .research-purpose, .limitations');
+const revealTargets = document.querySelectorAll('.hero-copy > *, .scope-grid > div, .section-heading, .overview > div:last-child, .summary-chart, .results-controls, .table-scroll, .finding-grid article, .curves-heading, .curve-list, .report-grid > div, .code-grid > a, .motivation-stats article, .research-purpose, .dataset-card, .annotation-story, .limitations');
 let revealObserver;
 if (!motionPreference.matches && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('motion-ready');
@@ -124,3 +124,32 @@ comparisonImage.addEventListener('load', () => {
   comparisonImage.classList.remove('is-changing');
   if (!motionPreference.matches) requestAnimationFrame(() => comparisonImage.classList.add('is-changing'));
 });
+
+// Accessible before/after viewer: original data and its annotation, not a prediction.
+const annotationRange = document.getElementById('annotation-range');
+if (annotationRange) {
+  annotationRange.addEventListener('input', () => {
+    const amount = Number(annotationRange.value);
+    document.querySelector('.annotation-view').style.setProperty('--split', `${amount}%`);
+    annotationRange.setAttribute('aria-valuetext', `${amount} percent annotation shown`);
+  });
+}
+const photoDialog = document.querySelector('.photo-dialog');
+if (photoDialog) {
+  document.querySelectorAll('[data-photo]').forEach(button => {
+    button.addEventListener('click', () => {
+      const img = photoDialog.querySelector('img');
+      img.src = button.dataset.photo;
+      img.alt = button.querySelector('img').alt;
+      document.getElementById('photo-dialog-title').textContent = button.dataset.photoTitle;
+      document.getElementById('photo-dialog-caption').textContent = button.dataset.photoCaption;
+      photoDialog.showModal();
+    });
+  });
+  photoDialog.querySelector('.close-photo').addEventListener('click', () => photoDialog.close());
+  photoDialog.addEventListener('click', event => {
+    if (event.target !== photoDialog) return;
+    const box = photoDialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) photoDialog.close();
+  });
+}
