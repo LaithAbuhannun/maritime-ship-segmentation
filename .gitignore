@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+clearml.conf
+*.pt
+*.pth
+*.ckpt
+.venv/
+node_modules/

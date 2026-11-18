@@ -1,0 +1,37 @@
+{
+  "project_root": "/content/drive/MyDrive/SAR_Ship_Segmentation_Study",
+  "data_root": "/content/drive/MyDrive/data",
+  "cache_root": "/content/sar_ship_segmentation_cache",
+  "experiment": "study_v6_samsar_stable",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "hrsid_pool": 1250,
+  "hrsid_test": 500,
+  "generalization_images": 500,
+  "max_epochs": 500,
+  "patience": 20,
+  "min_delta": 0.1,
+  "batch_size": 2,
+  "workers": 4,
+  "img_size": 512,
+  "rfdetr_resolution": 504,
+  "samsar_img_size": 256,
+  "amp": false,
+  "smoke": false,
+  "learning_rate": 2e-05,
+  "prediction_floor": 0.001,
+  "max_dets": 100,
+  "fps_images": 100,
+  "fps_warmup": 10,
+  "clearml": true,
+  "clearml_project": "SAR Ship Segmentation Study",
+  "samsar_repo": "/content/drive/MyDrive/SAMSAR_Implementation",
+  "sam_checkpoint": "/content/sam_vit_b_01ec64.pth",
+  "datasets": [
+    "ssdd",
+    "hrsid"
+  ],
+  "models": [
+    "samsar"
+  ]
+}

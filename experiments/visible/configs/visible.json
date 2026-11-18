@@ -1,0 +1,42 @@
+{
+  "project_root": "/content/drive/MyDrive/Visible_Ship_Study",
+  "data_root": "/content/drive/MyDrive/Visible_Ship_Study/data",
+  "cache_root": "/content/visible_ship_cache",
+  "experiment": "visible_v1_seed42",
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "hrsid_pool": 1250,
+  "hrsid_test": 500,
+  "generalization_images": 500,
+  "max_epochs": 500,
+  "patience": 20,
+  "min_delta": 0.1,
+  "batch_size": 1,
+  "workers": 0,
+  "img_size": 512,
+  "rfdetr_resolution": 504,
+  "samsar_img_size": 512,
+  "amp": false,
+  "learning_rate": 0.0001,
+  "prediction_floor": 0.001,
+  "max_dets": 100,
+  "fps_images": 100,
+  "fps_warmup": 10,
+  "clearml": true,
+  "clearml_project": "Visible Ship Segmentation Study",
+  "samsar_repo": "/content/drive/MyDrive/SAMSAR_Implementation",
+  "sam_checkpoint": "/content/drive/MyDrive/Visible_Ship_Study/pretrained/sam_vit_b_01ec64.pth",
+  "datasets": [
+    "visible"
+  ],
+  "models": [
+    "yolo26n_seg",
+    "yolo26s_seg",
+    "yolo26m_seg",
+    "rfdetr_seg",
+    "samsar",
+    "ship_contour",
+    "swininsseg",
+    "solov2_gala"
+  ]
+}

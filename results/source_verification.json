@@ -1,0 +1,162 @@
+[
+  {
+    "dataset": "ssdd",
+    "model": "yolo26n_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "yolo26s_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "yolo26m_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "rfdetr_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "samsar",
+    "experiment": "study_v6_samsar_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "ship_contour",
+    "experiment": "study_v6_samsar_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "swininsseg",
+    "experiment": "study_v10_swininsseg_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "b2827f2f0af3c37d82155e7da142c4e3550ead33d43ff5bf43a998bb61be87e3",
+    "verified_match": true,
+    "source_tree": "current_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "ssdd",
+    "model": "solov2_gala",
+    "experiment": "study_v11_solov2_gala",
+    "status": "REVIEW_ONLY",
+    "saved_code_sha256": "b2827f2f0af3c37d82155e7da142c4e3550ead33d43ff5bf43a998bb61be87e3",
+    "verified_match": true,
+    "source_tree": "current_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "yolo26n_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "yolo26s_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "yolo26m_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "rfdetr_seg",
+    "experiment": "study_v5_leakage_safe",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "samsar",
+    "experiment": "study_v6_samsar_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "ship_contour",
+    "experiment": "study_v6_samsar_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "0c8bba681499fc20f82a0a4d7c5e983da158524c5b7a60f0bd84956049d984da",
+    "verified_match": true,
+    "source_tree": "verified_historical_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "swininsseg",
+    "experiment": "study_v10_swininsseg_stable",
+    "status": "FINAL_SELECTED_COMPLETE",
+    "saved_code_sha256": "b2827f2f0af3c37d82155e7da142c4e3550ead33d43ff5bf43a998bb61be87e3",
+    "verified_match": true,
+    "source_tree": "current_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  },
+  {
+    "dataset": "hrsid",
+    "model": "solov2_gala",
+    "experiment": "study_v11_solov2_gala",
+    "status": "REVIEW_ONLY",
+    "saved_code_sha256": "b2827f2f0af3c37d82155e7da142c4e3550ead33d43ff5bf43a998bb61be87e3",
+    "verified_match": true,
+    "source_tree": "current_code/SAR_Ship_Segmentation_Study/sarstudy",
+    "python_files": 29
+  }
+]

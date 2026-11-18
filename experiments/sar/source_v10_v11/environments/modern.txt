@@ -1,0 +1,11 @@
+torch==2.7.1
+torchvision==0.22.1
+numpy==2.2.6
+opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
+ultralytics==8.4.131
+rfdetr[train]==1.9.4
+segment-anything==1.0
+clearml==2.1.12
+Pillow>=10,<12
+pandas>=2.2,<3
